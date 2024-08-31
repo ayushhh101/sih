@@ -1,8 +1,12 @@
-import logo from './logo.svg';
+import { Suspense } from 'react';
 import './App.css';
 import Grid from './components/Grid';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Blender from './components/Blender';
+
+// import { Canvas } from '@react-three/fiber';
+// import { OrbitControls } from '@react-three/drei';
+// import Plant1 from './Plant1'
 
 function App() {
   return (
@@ -13,6 +17,7 @@ function App() {
       <Route path="/blender" element={<Blender/>}/>
       </Routes>
    </div>
+  
    </>
   );
 }
