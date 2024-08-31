@@ -1,37 +1,156 @@
-*{
-  margin:0;
+* {
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-:root{
-  background: linear-gradient(to right, #e2e2e2, #c9d6ff) !important;
+
+:root {
+  --green-light: #d4ecd8; /* Light green for background gradients */
+  --green-dark: #91c788;  /* Darker green for gradients */
+  --text-color: #2e4a21;  /* Dark green for text */
+  --button-color: #4caf50; /* Button green color */
+  --button-hover-color: #45a049; /* Button hover color */
 }
-.logomain{
-  background: linear-gradient(to right, #e2e2e2, #c9d6ff) !important;
+body{
+  font-family: 'Arial', sans-serif; /* Adding a clean, modern font */
+  background: linear-gradient(135deg, #a8d8a0, #7abf7d); /* Darker green gradient for a lush garden feel */
+  height: 100vh;
 }
-.logocontainer
-{
+
+/* Header Styling */
+/* Header Styling */
+.header {
+  text-align: center; /* Center align the header text */
+  margin-top: 20px; /* Space between the header and the grid */
+  margin-bottom: 1px; /* Space between the header and the grid */
+}
+
+.header h1 {
+  font-family: 'Roboto', sans-serif; /* Modern sans-serif font */
+  font-size: 4rem; /* Larger font size for prominence */
+  font-weight: 600; /* Make the font bold */
+  color: #fff; /* White text color for contrast */
+  background: linear-gradient(135deg, #2e8b57, #4caf50); /* Green gradient text */
+  -webkit-background-clip: text; /* Clips the gradient to the text */
+  background-clip: text;
+  text-fill-color: transparent; /* Makes the text color transparent so gradient shows */
+  margin: 0; /* Remove default margin */
+  padding: 10px; /* Add padding for better spacing */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for better readability */
+  transform: translateY(-10px); /* Slightly lift the text */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.header h1:hover {
+  color: #4caf50; /* Change text color on hover */
+}
+
+
+.logomain {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.3)); /* Lighter gradient with more transparency */
+  display: flex;
+  justify-content: center; /* Centers the container horizontally */
+  align-items: center;
+  flex-wrap: wrap; /* Allows items to wrap into new rows */
+  padding: 20px;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Adds a soft shadow for depth */
+  border-radius: 20px; /* Rounded corners for a softer look */
+}
+
+.logocontainer {
   margin-top: 73px;
-  display:flex;
-  flex-direction: row;
-  /* justify-content: space-evenly; */
-  background: linear-gradient(to right, #96939393, #c9d6ff) !important;
+  display: flex;
+  flex-wrap: wrap; /* Ensures content wraps after 5 items */
+  justify-content: center; /* Centers each row */
+  gap: 40px; /* Space between items */
+  max-width: 100%; /* Ensures the container does not exceed the page width */
+  position: relative;
+  perspective: 1000px; /* Enables 3D space for the flip animation */
 }
 
-.logocontainer img{
-  border: solid black 2px;
-  border-radius: 100vh;
-  height: 30vh;
+.images {
+  position: relative;
   width: 30vh;
-  object-fit: fill;
+  height: 30vh;
   margin: 0 45px;
+  transition: transform 0.4s ease-in-out;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  will-change: transform;
 }
 
-.images{
-  transition: 0.5s;
-}
-
-.images:hover{
-  transform: scale(1.6);
+.images:hover {
+  transform: scale(2) rotateY(180deg);
   z-index: 2;
+}
+
+.images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: solid var(--text-color) 2px; /* Green border to match theme */
+  border-radius: 100vh;
+  backface-visibility: hidden;
+  transition: transform 0.4s ease-in-out;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white for text background */
+  display: flex;
+  flex-direction: column; /* Arrange items in a column */
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  border-radius: 100vh;
+  transform: rotateY(180deg);
+  transition: transform 0.4s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: 2px solid #ddd;
+  padding: 20px;
+  overflow: hidden; /* Ensures content does not overflow the circle */
+  text-align: center; /* Center text alignment for all content */
+}
+
+.plant-name {
+  font-size: 1.3rem; /* Slightly larger font size for better fit */
+  font-family: 'Georgia', serif; /* Serif font for a classic look */
+  margin-bottom: 3px; /* Space between name and description */
+  color: var(--text-color); /* Dark green color for plant names */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for text readability */
+  word-wrap: break-word; /* Break long words to fit within circle */
+}
+
+.plant-description {
+  font-size: 0.5rem; /* Smaller font size for better fit */
+  color: #444; /* Darker gray for better readability */
+  font-family: 'Verdana', sans-serif; /* Clean, modern font for descriptions */
+  line-height: 1.5; /* Improved line spacing */
+  margin-bottom: 12px; /* Space between description and buttons */
+  word-wrap: break-word; /* Ensure long words wrap within the container */
+}
+
+.btn {
+  font-family: 'Verdana', sans-serif; /* Matching font for buttons */
+  margin: 3px 0; /* Reduced space between buttons to fit better */
+  padding: 3px; /* Smaller padding for better fit */
+  font-size: 0.5rem;
+  color: white;
+  background-color: var(--button-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Added transition for smooth hover effect */
+  width: 80%; /* Limit button width to fit within circle */
+  max-width: 120px; /* Prevents button from expanding too wide */
+}
+
+.btn:hover {
+  background-color: var(--button-hover-color); /* Darken button color on hover */
+  transform: scale(1.15); /* Slightly enlarge the button on hover */
 }
