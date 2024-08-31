@@ -1,5 +1,7 @@
 import React from 'react';
 import '../componentscss/Grid.css';
+import Navbar from './Navbar';
+import { Link } from 'react-router-dom';
 
 const Grid = () => {
   // Array containing image sources and their descriptions
@@ -69,6 +71,7 @@ const Grid = () => {
 
   return (
     <>
+    {/* <Navbar/> */}
       <div className="header">
         <h1>VIRTUAL GARDEN</h1>
       </div>
@@ -88,6 +91,7 @@ const Grid = () => {
           ))}
         </div>
       </div>
+      <Link to='/blender'><button >Blender</button></Link>
     </>
   );
 };
