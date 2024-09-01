@@ -85,13 +85,12 @@ const Grid = () => {
                 <p className="plant-description">{plant.description}</p>
                 <button className="btn">Method of Cultivation</button>
                 <button className="btn">Diseases it Cures</button>
-                <button className="btn">Know More Info</button>
+                <Link to='/blender'><button className="btn">Know More Info</button></Link>
               </div>
             </div>
           ))}
         </div>
       </div>
-      <Link to='/blender'><button >Blender</button></Link>
     </>
   );
 };
