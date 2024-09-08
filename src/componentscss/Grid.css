@@ -20,7 +20,7 @@ body{
 /* Header Styling */
 .header {
   text-align: center; /* Center align the header text */
-  margin-top: 110px; /* Space between the header and the grid */
+  margin-top: 85px; /* Space between the header and the grid */
 }
 
 .header h1 {
@@ -114,7 +114,7 @@ body{
 }
 
 .plant-name {
-  font-size: 1.3rem; /* Slightly larger font size for better fit */
+  font-size: 1rem; /* Slightly larger font size for better fit */
   font-family: 'Georgia', serif; /* Serif font for a classic look */
   margin-bottom: 3px; /* Space between name and description */
   color: var(--text-color); /* Dark green color for plant names */

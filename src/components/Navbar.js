@@ -49,13 +49,10 @@ const Navbar = () => {
             <i className="fa-solid fa-x" onClick={closeSidebar} style={{ height: '10px', width: '100%' }}></i>
           </Link>
         </li>
-        <li><Link to="/hy">Hysteria</Link></li>
-        <li><Link to="/co">Colosseum</Link></li>
-        <li><Link to="/co">Teknack</Link></li>
-        <li><Link to="/eve">Events</Link></li>
-        <li><Link to="/clu">Clubs</Link></li>
-        <li><Link to="/st">Student Chapters</Link></li>
-        <li><Link to="/gal">Gallery</Link></li>
+        <li><Link to="/">Virtual Garden</Link></li>
+        <li><Link to="/">Plants</Link></li>
+        <li><Link to="/">Buy/Sell</Link></li>
+        <li><Link to="/">Consultation</Link></li>
       </ul>
     </>
   );
